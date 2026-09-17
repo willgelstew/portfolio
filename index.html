@@ -307,5 +307,994 @@
         color: var(--orange);
         font-size: 0.78rem;
         font-weight: 600;
-        margin
+        margin-bottom: 0.8rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+        color: var(--muted);
+    }
+
+    .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: 1rem;
+    }
+
+    .pill {
+        font-size: 0.72rem;
+        border-radius: 999px;
+        background: #f4ebe3;
+        padding: 0.2rem 0.65rem;
+        color: var(--brown);
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .timeline {
+        border-left: 1px solid var(--border);
+        padding-left: 1.75rem;
+    }
+
+    .timeline-item {
+        margin-bottom: 2.25rem;
+        position: relative;
+    }
+
+    .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -2.08rem;
+        top: 0.35rem;
+        width: 0.65rem;
+        height: 0.65rem;
+        border-radius: 50%;
+        background: var(--orange);
+        border: 3px solid var(--cream);
+    }
+
+    .timeline-role {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .timeline-org {
+        color: var(--brown);
+        font-size: 0.92rem;
+    }
+
+    .timeline-meta {
+        color: var(--brown-light);
+        font-size: 0.8rem;
+        margin-top: 0.15rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .timeline-item p {
+        color: var(--muted);
+        font-size: 0.9rem;
+    }
+
+    /* =========================
+       ABOUT / LAB EXPERIENCE
+    ========================= */
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .about-panel {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+        padding: 1.75rem;
+    }
+
+    .about-panel h3 {
+        margin-bottom: 0.75rem;
+    }
+
+    .about-panel p {
+        color: var(--muted);
+        font-size: 0.92rem;
+    }
+
+    /* =========================
+       AWARDS
+    ========================= */
+
+    .award-list {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .award {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+        padding: 1.35rem 1.5rem;
+    }
+
+    .award h3 {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .award p {
+        color: var(--muted);
+        font-size: 0.88rem;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-box {
+        background: var(--brown-dark);
+        color: white;
+        border-radius: 1.25rem;
+        padding: 2.5rem;
+    }
+
+    .contact-box .section-title {
+        color: white;
+    }
+
+    .contact-box .section-title::after {
+        background: var(--orange-light);
+    }
+
+    .contact-box .section-subtitle {
+        color: #d8c9bf;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .contact-list {
+        list-style: none;
+    }
+
+    .contact-list li {
+        margin-bottom: 0.75rem;
+        font-size: 0.9rem;
+        color: #eaded6;
+    }
+
+    .contact-list strong {
+        color: white;
+    }
+
+    .contact-list a {
+        color: var(--orange-light);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        border-top: 1px solid var(--border);
+        padding: 1.5rem 8% 2rem;
+        color: var(--brown-light);
+        font-size: 0.78rem;
+        text-align: center;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+        header {
+            padding: 1.25rem 6%;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .hero {
+            min-height: 680px;
+            background-position: 58% center;
+        }
+
+        .hero-content {
+            padding: 7rem 6% 8rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+        }
+
+        .profile-wrapper {
+            padding: 0 6%;
+            margin-top: -70px;
+        }
+
+        .profile-card {
+            grid-template-columns: 110px 1fr;
+            gap: 1.25rem;
+        }
+
+        .profile-photo {
+            width: 110px;
+            height: 130px;
+        }
+
+        main {
+            padding-left: 6%;
+            padding-right: 6%;
+        }
+
+        .about-grid,
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 550px) {
+
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+        }
+
+        .profile-card {
+            grid-template-columns: 1fr;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 140px;
+        }
+    }
+</style>
 ```
+
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Will Stewart</div>
+
+```
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+```
+
+</header>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="about">
+
+```
+<div class="hero-content">
+
+    <div class="hero-text">
+
+        <div class="hero-kicker">
+            Biomedical Engineering · University of Waterloo
+        </div>
+
+        <h1 class="hero-title">
+            Engineering with a focus on
+            <span>health, data & real-world problems.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            I’m a 2A Biomedical Engineering student at the University
+            of Waterloo developing practical experience across
+            biomedical design, scientific computing, wet-lab work,
+            data analysis, and process improvement.
+        </p>
+
+        <div class="hero-tags">
+            <span class="tag">Biomedical Engineering</span>
+            <span class="tag">Biomedical Design</span>
+            <span class="tag">Scientific Computing</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Wet Lab</span>
+            <span class="tag">Data Analysis</span>
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     PROFILE
+========================= -->
+
+<div class="profile-wrapper">
+
+```
+<div class="profile-card">
+
+    <img
+        class="profile-photo"
+        src="portrait.jpg"
+        alt="Portrait of Will Stewart"
+    >
+
+    <div>
+        <div class="profile-role">
+            Student · Engineer · Builder
+        </div>
+
+        <h2>Hi, I'm Will.</h2>
+
+        <p>
+            I’m interested in practical engineering problems where
+            careful analysis, hands-on design, and clear communication
+            can make a meaningful difference. My experience so far
+            spans biomedical design, wet-lab experimentation,
+            scientific computing, data management, and workflow
+            improvement.
+        </p>
+    </div>
+
+</div>
+```
+
+</div>
+
+<main>
+
+```
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <h2 class="section-title">
+        Selected projects
+    </h2>
+
+    <p class="section-subtitle">
+        Projects ranging from biomedical device design and physical
+        prototyping to an ongoing scientific computing project.
+    </p>
+
+    <div class="grid">
+
+        <article class="card">
+
+            <h3>RadML</h3>
+
+            <p class="card-meta">
+                Machine learning · Radiation physics · August 2026 – Present
+            </p>
+
+            <p>
+                Developing a machine learning tool to predict radiation
+                attenuation of polymers based on composition. I am
+                building a dataset of attenuation values for polymer
+                composites while learning the underlying physics and
+                developing the computational pipeline.
+            </p>
+
+            <div class="pill-row">
+                <span class="pill">Python</span>
+                <span class="pill">Jupyter</span>
+                <span class="pill">NumPy</span>
+                <span class="pill">Pandas</span>
+                <span class="pill">Git/GitHub</span>
+                <span class="pill">XCOM</span>
+            </div>
+
+        </article>
+
+
+        <article class="card">
+
+            <h3>UW Biomechatronics Design Team</h3>
+
+            <p class="card-meta">
+                Biomedical design · SolidWorks · 3D printing
+            </p>
+
+            <p>
+                Contributed to assistive-device design and fabrication,
+                including a 3D-printed device designed to aid key use
+                for people with arthritis and a Braille keyboard
+                designed to make typing easier for people with visual
+                impairments.
+            </p>
+
+            <div class="pill-row">
+                <span class="pill">SolidWorks</span>
+                <span class="pill">3D printing</span>
+                <span class="pill">Prototyping</span>
+                <span class="pill">Assistive technology</span>
+            </div>
+
+        </article>
+
+
+        <article class="card">
+
+            <h3>BME 161 — Intro to Biomedical Design</h3>
+
+            <p class="card-meta">
+                Biomedical design · Iterative design · Fall 2025
+            </p>
+
+            <p>
+                Used an iterative design process to create a device
+                intended to prevent arthritis-related pain while
+                playing Crokinole. The project developed practical
+                experience with design iteration and problem solving.
+            </p>
+
+            <div class="pill-row">
+                <span class="pill">Biomedical design</span>
+                <span class="pill">Iteration</span>
+                <span class="pill">Prototyping</span>
+            </div>
+
+        </article>
+
+
+        <article class="card">
+
+            <h3>McMaster DomesDay Competition</h3>
+
+            <p class="card-meta">
+                Structural design · 3D design · 1st place
+            </p>
+
+            <p>
+                Designed a 3D hollow dome structure for a structural
+                competition. The final structure withstood
+                approximately 33,000 lbs before collapsing and placed
+                first in the competition.
+            </p>
+
+            <div class="pill-row">
+                <span class="pill">Structural design</span>
+                <span class="pill">Prototyping</span>
+                <span class="pill">Problem solving</span>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LAB / TECHNICAL EXPERIENCE
+========================= -->
+
+<section>
+
+    <h2 class="section-title">
+        Laboratory & technical experience
+    </h2>
+
+    <p class="section-subtitle">
+        Early hands-on experience developing careful experimental
+        technique, data analysis, and scientific documentation.
+    </p>
+
+    <div class="about-grid">
+
+        <article class="about-panel">
+
+            <h3>Wet-lab experience</h3>
+
+            <p>
+                Through coursework and laboratory activities, I have
+                gained early experience with pipetting, osmosis and
+                diffusion experiments, beginner hydrogel fabrication,
+                contact angle measurements, and introductory work with
+                wettability. These experiences have emphasized
+                following procedures carefully, working accurately,
+                and maintaining organized experimental records.
+            </p>
+
+            <div class="pill-row">
+                <span class="pill">Pipetting</span>
+                <span class="pill">Hydrogels</span>
+                <span class="pill">Contact angle</span>
+                <span class="pill">Wettability</span>
+                <span class="pill">Experimental procedure</span>
+            </div>
+
+        </article>
+
+
+        <article class="about-panel">
+
+            <h3>Data analysis</h3>
+
+            <p>
+                Coursework in biology, chemistry, and mechanics has
+                introduced me to basic quantitative analysis,
+                including calculating means and standard deviations,
+                performing regression, determining coefficients of
+                determination, and creating calibration curves. I am
+                continuing to develop these skills through Python,
+                Excel, and Jupyter.
+            </p>
+
+            <div class="pill-row">
+                <span class="pill">Regression</span>
+                <span class="pill">Calibration curves</span>
+                <span class="pill">Statistics</span>
+                <span class="pill">Excel</span>
+                <span class="pill">Jupyter</span>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience">
+
+    <h2 class="section-title">
+        Experience
+    </h2>
+
+    <p class="section-subtitle">
+        Professional, research, tutoring, and operational experience
+        that has shaped how I approach technical and collaborative
+        work.
+    </p>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="timeline-role">
+                Medical Supply and Distribution Associate
+            </div>
+
+            <div class="timeline-org">
+                m-Health Solutions · Hamilton, ON
+            </div>
+
+            <div class="timeline-meta">
+                Summer 2026
+            </div>
+
+            <p>
+                Redesigned the packing workflow for Holter devices by
+                reorganizing device-specific materials around task
+                correlation, reducing packing errors and improving
+                patient order accuracy. Optimized daily workflows
+                through task analysis and process improvements,
+                creating approximately one hour of additional
+                productive time per day.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-role">
+                Summer Research Intern
+            </div>
+
+            <div class="timeline-org">
+                Western University · London, ON
+            </div>
+
+            <div class="timeline-meta">
+                July 2023
+            </div>
+
+            <p>
+                Organized medical datasets gathered from Public Health
+                Ontario and mapped stroke data and social determinants
+                of health across Ontario using ArcGIS. The role
+                developed experience with medical data management,
+                geographic analysis, and maintaining accurate
+                information for decision-making.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-role">
+                STEM Tutor
+            </div>
+
+            <div class="timeline-org">
+                CEL · Goderich, ON
+            </div>
+
+            <div class="timeline-meta">
+                December 2024 – June 2025
+            </div>
+
+            <p>
+                Tutored students in Grades 9–12 and adults completing
+                secondary school courses, with a focus on STEM
+                subjects. Developed communication skills by adapting
+                explanations to different learners and levels of
+                understanding.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-role">
+                Warehouse Associate
+            </div>
+
+            <div class="timeline-org">
+                Canadian Tire · Goderich, ON
+            </div>
+
+            <div class="timeline-meta">
+                July 2022 – October 2023
+            </div>
+
+            <p>
+                Transported heavy and high-value items between the
+                warehouse and retail floor while assisting customers
+                and staff throughout daily operations.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section>
+
+    <h2 class="section-title">
+        Education
+    </h2>
+
+    <p class="section-subtitle">
+        Biomedical engineering education with a growing foundation in
+        engineering, computation, science, and design.
+    </p>
+
+    <div class="card">
+
+        <h3>
+            Bachelor of Applied Science — Biomedical Engineering
+        </h3>
+
+        <p class="card-meta">
+            University of Waterloo · September 2025 – Present
+        </p>
+
+        <p>
+            2A Biomedical Engineering student developing a foundation
+            across biomedical design, computation, mathematics,
+            mechanics, biology, chemistry, human factors, and
+            engineering communication.
+        </p>
+
+        <div class="pill-row">
+            <span class="pill">Biomedical Engineering</span>
+            <span class="pill">Biomedical Design</span>
+            <span class="pill">Mechanics</span>
+            <span class="pill">Biology</span>
+            <span class="pill">Chemistry</span>
+            <span class="pill">Computation</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <h2 class="section-title">
+        Skills
+    </h2>
+
+    <p class="section-subtitle">
+        Technical tools and practical skills I’m using and continuing
+        to develop throughout my degree and projects.
+    </p>
+
+    <div class="grid">
+
+        <article class="card">
+
+            <h3>Programming & scientific computing</h3>
+
+            <p class="card-meta">
+                Python · C++ · Data analysis
+            </p>
+
+            <p>
+                Proficient in C++ and Python, with growing experience
+                applying Python to scientific computing and data
+                analysis. Currently developing skills with Jupyter,
+                NumPy, Pandas, Git/GitHub, and XCOM through RadML.
+            </p>
+
+            <div class="pill-row">
+                <span class="pill">Python</span>
+                <span class="pill">C++</span>
+                <span class="pill">NumPy</span>
+                <span class="pill">Pandas</span>
+                <span class="pill">Jupyter</span>
+                <span class="pill">Git/GitHub</span>
+            </div>
+
+        </article>
+
+
+        <article class="card">
+
+            <h3>Engineering & design</h3>
+
+            <p class="card-meta">
+                SolidWorks · 3D printing · Prototyping
+            </p>
+
+            <p>
+                Proficient in SolidWorks with hands-on experience
+                designing and fabricating 3D-printed devices through
+                biomedical design projects and the UW
+                Biomechatronics Design Team.
+            </p>
+
+            <div class="pill-row">
+                <span class="pill">SolidWorks</span>
+                <span class="pill">3D printing</span>
+                <span class="pill">CAD</span>
+                <span class="pill">Prototyping</span>
+                <span class="pill">Iterative design</span>
+            </div>
+
+        </article>
+
+
+        <article class="card">
+
+            <h3>Laboratory & analysis</h3>
+
+            <p class="card-meta">
+                Experimental methods · Data analysis
+            </p>
+
+            <p>
+                Developing practical laboratory and quantitative
+                analysis skills through biomedical engineering
+                coursework, including pipetting, hydrogel fabrication,
+                contact angle measurements, regression, calibration
+                curves, and basic statistical analysis.
+            </p>
+
+            <div class="pill-row">
+                <span class="pill">Wet lab</span>
+                <span class="pill">Statistics</span>
+                <span class="pill">Regression</span>
+                <span class="pill">Excel</span>
+            </div>
+
+        </article>
+
+
+        <article class="card">
+
+            <h3>Communication & productivity</h3>
+
+            <p class="card-meta">
+                Technical writing · Presentation · Microsoft Office
+            </p>
+
+            <p>
+                Experienced with written, visual, and oral
+                communication through lab reports, presentations, and
+                coursework. Proficient with Microsoft Office and
+                Canva, with additional experience communicating
+                technical ideas through tutoring and team projects.
+            </p>
+
+            <div class="pill-row">
+                <span class="pill">Microsoft Office</span>
+                <span class="pill">Canva</span>
+                <span class="pill">Technical writing</span>
+                <span class="pill">Presentations</span>
+                <span class="pill">French — DELF A1</span>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     AWARDS
+========================= -->
+
+<section id="awards">
+
+    <h2 class="section-title">
+        Awards
+    </h2>
+
+    <p class="section-subtitle">
+        Academic and personal achievement recognitions.
+    </p>
+
+    <div class="award-list">
+
+        <article class="award">
+
+            <h3>
+                Governor General’s Academic Medal — Bronze
+            </h3>
+
+            <p>
+                Awarded to the student graduating with the highest
+                average from a high school.
+            </p>
+
+        </article>
+
+
+        <article class="award">
+
+            <h3>
+                Bill Kirkley Personal Achievement, Incentive and
+                Initiative Award
+            </h3>
+
+            <p>
+                Awarded to a Grade 11 student who demonstrates
+                commitment to their community and has made positive
+                improvements to achieve their goals.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="contact-box">
+
+        <h2 class="section-title">
+            Let's connect
+        </h2>
+
+        <p class="section-subtitle">
+            I’m interested in opportunities where I can contribute
+            through organized, detail-oriented, and collaborative
+            engineering work while continuing to develop practical
+            technical skills.
+        </p>
+
+        <div class="contact-grid">
+
+            <div>
+
+                <ul class="contact-list">
+
+                    <li>
+                        <strong>School email:</strong>
+                        <a href="mailto:w6stewar@uwaterloo.ca">
+                            w6stewar@uwaterloo.ca
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>Personal email:</strong>
+                        <a href="mailto:willgelstew@icloud.com">
+                            willgelstew@icloud.com
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>Phone:</strong>
+                        <a href="tel:+15194406699">
+                            519-440-6699
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>LinkedIn:</strong>
+                        <a href="#">
+                            Add LinkedIn profile
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>GitHub:</strong>
+                        <a href="#">
+                            Add GitHub profile
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div>
+
+                <p class="section-subtitle">
+                    I enjoy learning new tools, improving existing
+                    processes, and working on problems where careful
+                    engineering can improve outcomes for people.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+```
+
+</main>
+
+<footer>
+    © 2026 Will Stewart · Biomedical Engineering · University of Waterloo
+</footer>
+
+</body>
+</html>
