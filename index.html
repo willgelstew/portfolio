@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Will Stewart | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: #0f172a;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Layout */
+        header {
+            padding: 2rem 10%;
+            border-bottom: 1px solid #1f2937;
+            background: rgba(15, 23, 42, 0.9);
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+
+        .logo {
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            padding-bottom: 0.1rem;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #38bdf8;
+        }
+
+        main {
+            padding: 3rem 10% 4rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        /* Hero */
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: #9ca3af;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            border-radius: 999px;
+            border: 1px solid #1f2937;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.8rem;
+            color: #9ca3af;
+        }
+
+        .hero-card {
+            border-radius: 1rem;
+            border: 1px solid #1f2937;
+            padding: 1.5rem;
+            background: radial-gradient(circle at top left, #1d2838, #020617);
+        }
+
+        .hero-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: #e5e7eb;
+        }
+
+        .hero-card ul {
+            list-style: none;
+        }
+
+        .hero-card li {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-bottom: 0.4rem;
+        }
+
+        /* Section titles */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.95rem;
+            color: #9ca3af;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Cards */
+        .card {
+            border-radius: 0.9rem;
+            border: 1px solid #1f2937;
+            padding: 1.25rem;
+            background: #020617;
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.75rem;
+        }
+
+        .pill {
+            font-size: 0.75rem;
+            border-radius: 999px;
+            border: 1px solid #1f2937;
+            padding: 0.15rem 0.6rem;
+            color: #9ca3af;
+        }
+
+        /* Experience */
+        .timeline {
+            border-left: 1px solid #1f2937;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-item {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -0.55rem;
+            top: 0.2rem;
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 999px;
+            background: #38bdf8;
+        }
+
+        .timeline-role {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .timeline-org {
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        .timeline-meta {
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin-top: 0.15rem;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+            gap: 2rem;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            padding: 1.5rem 10% 2rem;
+            border-top: 1px solid #1f2937;
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 1.5rem 6%;
+            }
+
+            main,
+            footer {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">WILL STEWART</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!-- Hero -->
+    <section class="hero" id="about">
+        <div>
+            <h1 class="hero-title">Biomedical engineering student exploring AI, materials, and digital health.</h1>
+            <p class="hero-subtitle">
+                I’m a 2A Biomedical Engineering student at the University of Waterloo, interested in
+                machine learning for materials science, radiation physics, and patient‑centred digital health.
+            </p>
+
+            <div class="hero-tags">
+                <span class="tag">Biomedical Engineering @ Waterloo</span>
+                <span class="tag">Python & C++</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Materials & Radiation</span>
+                <span class="tag">Digital Health</span>
+            </div>
+
+            <p class="hero-subtitle">
+                I like building structured technical projects—from radiation attenuation models for polymers
+                to tools that make health data more meaningful for patients and clinicians.
+            </p>
+        </div>
+
+        <aside class="hero-card">
+            <h3>Snapshot</h3>
+            <ul>
+                <li>• Program: Biomedical Engineering (2A), University of Waterloo</li>
+                <li>• Focus: Materials, radiation physics, and applied machine learning</li>
+                <li>• Tools: Python, C++, SolidWorks, Jupyter, NumPy, Pandas</li>
+                <li>• Interests: Digital health innovation, patient‑reported outcomes</li>
+            </ul>
+        </aside>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2 class="section-title">Selected projects</h2>
+        <p class="section-subtitle">
+            A few technical projects that show how I approach engineering problems—from data and models
+            to physical prototypes.
+        </p>
+
+        <div class="grid">
+            <article class="card">
+                <h3>AI model for radiation attenuation of polymers</h3>
+                <p class="card-meta">Machine learning • Materials science • In progress</p>
+                <p>
+                    Building a dataset and predictive model to estimate radiation attenuation of polymer materials
+                    based on composition and structure. The goal is to support smarter material selection for
+                    shielding and medical applications.
+                </p>
+                <div class="pill-row">
+                    <span class="pill">Python</span>
+                    <span class="pill">NumPy</span>
+                    <span class="pill">Pandas</span>
+                    <span class="pill">Regression / ML</span>
+                    <span class="pill">Radiation physics</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3>Digital health & patient‑reported outcomes concept</h3>
+                <p class="card-meta">Human factors • UX • Concept</p>
+                <p>
+                    Conceptual design for a digital health tool that makes patient‑reported outcomes easier to
+                    capture, visualize, and act on. Focused on usability, clear feedback loops, and integration
+                    with clinical workflows.
+                </p>
+                <div class="pill-row">
+                    <span class="pill">Human factors</span>
+                    <span class="pill">UX design</span>
+                    <span class="pill">Healthcare</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3>Mechanical & CAD projects</h3>
+                <p class="card-meta">SolidWorks • Prototyping</p>
+                <p>
+                    Coursework and personal projects using SolidWorks and 3D printing, including basic mechanisms,
+                    fixtures, and small assemblies. Emphasis on clear documentation and iteration.
+                </p>
+                <div class="pill-row">
+                    <span class="pill">SolidWorks</span>
+                    <span class="pill">3D printing</span>
+                    <span class="pill">Mechanics</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <h2 class="section-title">Experience & coursework</h2>
+        <p class="section-subtitle">
+            Formal courses and hands‑on work that shape how I think about engineering, data, and health.
+        </p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-role">Biomedical Engineering, 2A</div>
+                <div class="timeline-org">University of Waterloo</div>
+                <div class="timeline-meta">Communications, design, computation, and core math</div>
+                <p class="section-subtitle">
+                    Completed courses include Communications in BME, Digital Computation, Intro to Biomedical Design,
+                    Human Factors in BME, Statics, Calculus 1–2, Linear Algebra, Data Structures & Algorithms,
+                    Chemistry Principles, and Intro to Formal Logic.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-role">Upcoming co‑op term coursework</div>
+                <div class="timeline-org">University of Waterloo</div>
+                <div class="timeline-meta">Mechanics, materials, biology, and dynamics</div>
+                <p class="section-subtitle">
+                    Will have completed Mechanics of Deformable Solids, Materials Science for BME, Biology for BME,
+                    Dynamics, and Calculus 3 by the end of the co‑op term.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-subtitle">
+            A mix of technical tools and ways of working that I’m actively developing.
+        </p>
+
+        <div class="grid">
+            <article class="card">
+                <h3>Programming & data</h3>
+                <p class="card-meta">Python • C++ • Data structures</p>
+                <p>
+                    Early in Python but comfortable with core programming concepts and data structures.
+                    Learning to use NumPy, Pandas, and Jupyter for analysis and machine learning workflows.
+                </p>
+                <div class="pill-row">
+                    <span class="pill">Python (beginner)</span>
+                    <span class="pill">C++ (beginner)</span>
+                    <span class="pill">Data structures</span>
+                    <span class="pill">Algorithms</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3>Engineering & lab</h3>
+                <p class="card-meta">Mechanical • Materials • Documentation</p>
+                <p>
+                    Experience with SolidWorks, 3D printing, and basic experimental procedures. Focus on clear
+                    lab documentation and structured project planning.
+                </p>
+                <div class="pill-row">
+                    <span class="pill">SolidWorks (intermediate)</span>
+                    <span class="pill">3D printing</span>
+                    <span class="pill">Lab documentation</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3>Communication & tools</h3>
+                <p class="card-meta">Writing • Presentation • Productivity</p>
+                <p>
+                    Comfortable with professional writing and one‑page technical summaries. Proficient with
+                    Microsoft Office and Canva for clear, concise communication.
+                </p>
+                <div class="pill-row">
+                    <span class="pill">Technical writing</span>
+                    <span class="pill">Microsoft Office</span>
+                    <span class="pill">Canva</span>
+                    <span class="pill">French (beginner)</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">
+            Open to co‑op roles and projects at the intersection of engineering, data, and health.
+        </p>
+
+        <div class="contact-grid">
+            <div>
+                <ul class="contact-list">
+                    <li><strong>Email:</strong> your.email@uwaterloo.ca</li>
+                    <li><strong>LinkedIn:</strong> linkedin.com/in/your‑profile</li>
+                    <li><strong>GitHub:</strong> github.com/your‑username</li>
+                </ul>
+            </div>
+            <div>
+                <p class="section-subtitle">
+                    If you’d like a focused one‑page summary of my experience for a specific role,
+                    I’m happy to tailor it to the team and problem space.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    &copy; 2026 Will Stewart. Built with HTML & CSS.
+</footer>
+</body>
+</html>
