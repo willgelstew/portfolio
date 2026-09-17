@@ -59,7 +59,7 @@
         width: 100%;
         padding: 1.75rem 8%;
         z-index: 10;
-        color: white;
+        color: #ffffff;
     }
 
     nav {
@@ -73,6 +73,7 @@
         letter-spacing: 0.12em;
         text-transform: uppercase;
         font-size: 0.85rem;
+        color: #ffffff;
     }
 
     .nav-links {
@@ -82,13 +83,14 @@
     }
 
     .nav-links a {
-        opacity: 0.9;
+        opacity: 1;
         transition: opacity 0.2s ease;
+        color: #ffffff;
     }
 
     .nav-links a:hover {
-        opacity: 1;
-        color: white;
+        opacity: 0.75;
+        color: #ffffff;
     }
 
     /* =========================
@@ -102,12 +104,16 @@
         align-items: center;
         overflow: hidden;
 
+        /*
+            Dark overlay keeps the scenic image visible while
+            providing much stronger contrast for white text.
+        */
         background-image:
             linear-gradient(
                 90deg,
-                rgba(35, 25, 20, 0.78) 0%,
-                rgba(35, 25, 20, 0.48) 48%,
-                rgba(35, 25, 20, 0.15) 100%
+                rgba(20, 14, 11, 0.88) 0%,
+                rgba(20, 14, 11, 0.72) 45%,
+                rgba(20, 14, 11, 0.52) 100%
             ),
             url("scenic.jpg");
 
@@ -120,23 +126,24 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 8rem 8% 9rem;
-        color: white;
+        color: #ffffff;
     }
 
     .hero-text {
-        max-width: 760px;
+        max-width: 780px;
     }
 
     .hero-kicker {
         display: inline-block;
         margin-bottom: 1.25rem;
         padding: 0.35rem 0.8rem;
-        border: 1px solid rgba(255,255,255,0.45);
+        border: 1px solid rgba(255,255,255,0.55);
         border-radius: 999px;
         font-size: 0.78rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: #f7e8dc;
+        color: #ffffff;
+        background: rgba(0,0,0,0.15);
         backdrop-filter: blur(5px);
     }
 
@@ -146,17 +153,18 @@
         letter-spacing: -0.045em;
         font-weight: 700;
         margin-bottom: 1.5rem;
+        color: #ffffff;
     }
 
     .hero-title span {
-        color: #f2b17b;
+        color: #ffffff;
     }
 
     .hero-subtitle {
-        max-width: 680px;
+        max-width: 700px;
         font-size: 1.12rem;
         line-height: 1.7;
-        color: #f4ebe4;
+        color: #ffffff;
         margin-bottom: 2rem;
     }
 
@@ -169,11 +177,11 @@
     .tag {
         padding: 0.35rem 0.8rem;
         border-radius: 999px;
-        border: 1px solid rgba(255,255,255,0.3);
-        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.38);
+        background: rgba(255,255,255,0.10);
         backdrop-filter: blur(5px);
         font-size: 0.78rem;
-        color: #fff;
+        color: #ffffff;
     }
 
     /* =========================
@@ -265,7 +273,7 @@
         color: var(--muted);
         font-size: 0.95rem;
         margin-bottom: 2rem;
-        max-width: 750px;
+        max-width: 760px;
     }
 
     /* =========================
@@ -285,11 +293,15 @@
         background: var(--white);
         border: 1px solid var(--border);
         border-radius: 1rem;
-        padding: 1.5rem;
+        overflow: hidden;
         transition:
             transform 0.2s ease,
             box-shadow 0.2s ease,
             border-color 0.2s ease;
+    }
+
+    .card-content {
+        padding: 1.5rem;
     }
 
     .card:hover {
@@ -328,6 +340,67 @@
         background: #f4ebe3;
         padding: 0.2rem 0.65rem;
         color: var(--brown);
+    }
+
+    /* =========================
+       PROJECT IMAGES
+    ========================= */
+
+    .project-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+        background: #eee5dc;
+    }
+
+    .project-image.contain {
+        object-fit: contain;
+        padding: 1rem;
+    }
+
+    /* =========================
+       PROJECT GALLERY
+    ========================= */
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem;
+        border: 1px solid var(--border);
+        background: var(--white);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.35s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.035);
+    }
+
+    .gallery-caption {
+        padding: 1rem 1.15rem;
+    }
+
+    .gallery-caption h3 {
+        font-size: 0.98rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .gallery-caption p {
+        color: var(--muted);
+        font-size: 0.82rem;
     }
 
     /* =========================
@@ -477,6 +550,28 @@
         color: var(--orange-light);
     }
 
+    .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-link {
+        display: inline-block;
+        border: 1px solid rgba(255,255,255,0.22);
+        border-radius: 999px;
+        padding: 0.45rem 0.9rem;
+        color: #ffffff !important;
+        font-size: 0.8rem;
+        transition: background 0.2s ease;
+    }
+
+    .social-link:hover {
+        background: rgba(255,255,255,0.10);
+        color: #ffffff !important;
+    }
+
     /* =========================
        FOOTER
     ========================= */
@@ -540,6 +635,10 @@
         .contact-grid {
             grid-template-columns: 1fr;
         }
+
+        .gallery {
+            grid-template-columns: 1fr;
+        }
     }
 
     @media (max-width: 550px) {
@@ -559,6 +658,10 @@
         .profile-photo {
             width: 120px;
             height: 140px;
+        }
+
+        .gallery-item img {
+            height: 240px;
         }
     }
 </style>
@@ -602,24 +705,24 @@
         </div>
 
         <h1 class="hero-title">
-            Engineering with a focus on
-            <span>health, data & real-world problems.</span>
+            Biomedical engineering for
+            <span>extreme environments.</span>
         </h1>
 
         <p class="hero-subtitle">
             I’m a 2A Biomedical Engineering student at the University
-            of Waterloo developing practical experience across
-            biomedical design, scientific computing, wet-lab work,
-            data analysis, and process improvement.
+            of Waterloo especially interested in space medicine and
+            the intersection of biomedical engineering and
+            extreme-environment engineering.
         </p>
 
         <div class="hero-tags">
             <span class="tag">Biomedical Engineering</span>
+            <span class="tag">Space Medicine</span>
+            <span class="tag">Extreme Environments</span>
             <span class="tag">Biomedical Design</span>
             <span class="tag">Scientific Computing</span>
             <span class="tag">Machine Learning</span>
-            <span class="tag">Wet Lab</span>
-            <span class="tag">Data Analysis</span>
         </div>
 
     </div>
@@ -646,18 +749,19 @@
 
     <div>
         <div class="profile-role">
-            Student · Engineer · Builder
+            Biomedical Engineering · Space Medicine · Design
         </div>
 
         <h2>Hi, I'm Will.</h2>
 
         <p>
-            I’m interested in practical engineering problems where
-            careful analysis, hands-on design, and clear communication
-            can make a meaningful difference. My experience so far
-            spans biomedical design, wet-lab experimentation,
-            scientific computing, data management, and workflow
-            improvement.
+            I’m interested in how biomedical engineering can help
+            people operate and stay healthy in environments that
+            challenge the human body. In particular, I’m interested
+            in space medicine and the engineering problems created by
+            extreme environments. My current experience spans
+            biomedical design, wet-lab experimentation, scientific
+            computing, data management, and process improvement.
         </p>
     </div>
 
@@ -680,112 +784,311 @@
     </h2>
 
     <p class="section-subtitle">
-        Projects ranging from biomedical device design and physical
-        prototyping to an ongoing scientific computing project.
+        Hands-on biomedical design, scientific computing, and
+        engineering projects that reflect my interest in solving
+        practical problems.
     </p>
 
     <div class="grid">
 
+        <!-- RADML -->
+
         <article class="card">
 
-            <h3>RadML</h3>
+            <div class="card-content">
 
-            <p class="card-meta">
-                Machine learning · Radiation physics · August 2026 – Present
-            </p>
+                <h3>RadML</h3>
 
-            <p>
-                Developing a machine learning tool to predict radiation
-                attenuation of polymers based on composition. I am
-                building a dataset of attenuation values for polymer
-                composites while learning the underlying physics and
-                developing the computational pipeline.
-            </p>
+                <p class="card-meta">
+                    Machine learning · Radiation physics · August 2026 – Present
+                </p>
 
-            <div class="pill-row">
-                <span class="pill">Python</span>
-                <span class="pill">Jupyter</span>
-                <span class="pill">NumPy</span>
-                <span class="pill">Pandas</span>
-                <span class="pill">Git/GitHub</span>
-                <span class="pill">XCOM</span>
+                <p>
+                    Developing a machine learning tool to predict
+                    radiation attenuation of polymers based on
+                    composition. I am building a dataset of attenuation
+                    values for polymer composites while learning the
+                    underlying physics and developing the computational
+                    pipeline. The longer-term goal is to explore how
+                    predictive modelling could support material
+                    selection for environments where radiation is a
+                    significant engineering concern.
+                </p>
+
+                <div class="pill-row">
+                    <span class="pill">Python</span>
+                    <span class="pill">Jupyter</span>
+                    <span class="pill">NumPy</span>
+                    <span class="pill">Pandas</span>
+                    <span class="pill">Git/GitHub</span>
+                    <span class="pill">XCOM</span>
+                </div>
+
             </div>
 
         </article>
 
 
+        <!-- BIOMECHATRONICS -->
+
         <article class="card">
 
-            <h3>UW Biomechatronics Design Team</h3>
+            <img
+                class="project-image"
+                src="key_turner.jpg"
+                alt="3D printed key-turning assistive device"
+            >
 
-            <p class="card-meta">
-                Biomedical design · SolidWorks · 3D printing
-            </p>
+            <div class="card-content">
 
-            <p>
-                Contributed to assistive-device design and fabrication,
-                including a 3D-printed device designed to aid key use
-                for people with arthritis and a Braille keyboard
-                designed to make typing easier for people with visual
-                impairments.
-            </p>
+                <h3>UW Biomechatronics Design Team</h3>
 
-            <div class="pill-row">
-                <span class="pill">SolidWorks</span>
-                <span class="pill">3D printing</span>
-                <span class="pill">Prototyping</span>
-                <span class="pill">Assistive technology</span>
+                <p class="card-meta">
+                    Biomedical design · SolidWorks · 3D printing
+                </p>
+
+                <p>
+                    Contributed to the design and fabrication of
+                    assistive devices, including a 3D-printed device
+                    designed to aid key use for people with arthritis.
+                    The project strengthened my ability to troubleshoot,
+                    iterate on physical designs, and communicate within
+                    a multidisciplinary design team.
+                </p>
+
+                <div class="pill-row">
+                    <span class="pill">SolidWorks</span>
+                    <span class="pill">3D printing</span>
+                    <span class="pill">Prototyping</span>
+                    <span class="pill">Assistive technology</span>
+                </div>
+
             </div>
 
         </article>
 
 
+        <!-- BRAILLE -->
+
         <article class="card">
 
-            <h3>BME 161 — Intro to Biomedical Design</h3>
+            <img
+                class="project-image"
+                src="braille_keys.jpg"
+                alt="Braille keyboard project"
+            >
 
-            <p class="card-meta">
-                Biomedical design · Iterative design · Fall 2025
-            </p>
+            <div class="card-content">
 
-            <p>
-                Used an iterative design process to create a device
-                intended to prevent arthritis-related pain while
-                playing Crokinole. The project developed practical
-                experience with design iteration and problem solving.
-            </p>
+                <h3>Braille Keyboard</h3>
 
-            <div class="pill-row">
-                <span class="pill">Biomedical design</span>
-                <span class="pill">Iteration</span>
-                <span class="pill">Prototyping</span>
+                <p class="card-meta">
+                    UW Biomechatronics Design Team · Assistive technology
+                </p>
+
+                <p>
+                    Contributed to the development of a Braille
+                    keyboard intended to make typing more accessible
+                    for people with visual impairments. The project
+                    provided experience translating an accessibility
+                    need into a physical engineering design.
+                </p>
+
+                <div class="pill-row">
+                    <span class="pill">Biomedical design</span>
+                    <span class="pill">Accessibility</span>
+                    <span class="pill">Prototyping</span>
+                    <span class="pill">3D printing</span>
+                </div>
+
             </div>
 
         </article>
 
 
+        <!-- CROKINOLE -->
+
         <article class="card">
 
-            <h3>McMaster DomesDay Competition</h3>
+            <img
+                class="project-image"
+                src="crokinole_launcher.jpg"
+                alt="Crokinole assistive launcher project"
+            >
 
-            <p class="card-meta">
-                Structural design · 3D design · 1st place
-            </p>
+            <div class="card-content">
 
-            <p>
-                Designed a 3D hollow dome structure for a structural
-                competition. The final structure withstood
-                approximately 33,000 lbs before collapsing and placed
-                first in the competition.
-            </p>
+                <h3>BME 161 — Intro to Biomedical Design</h3>
 
-            <div class="pill-row">
-                <span class="pill">Structural design</span>
-                <span class="pill">Prototyping</span>
-                <span class="pill">Problem solving</span>
+                <p class="card-meta">
+                    Biomedical design · Iterative design · Fall 2025
+                </p>
+
+                <p>
+                    Used an iterative design process to create a device
+                    intended to prevent arthritis-related pain while
+                    playing Crokinole. The project developed practical
+                    experience with identifying user needs, designing
+                    solutions, and refining a physical prototype.
+                </p>
+
+                <div class="pill-row">
+                    <span class="pill">Biomedical design</span>
+                    <span class="pill">Iteration</span>
+                    <span class="pill">Prototyping</span>
+                </div>
+
             </div>
 
         </article>
+
+
+        <!-- DOMESDAY -->
+
+        <article class="card">
+
+            <img
+                class="project-image"
+                src="dome_full.jpeg"
+                alt="Full view of DomesDay dome structure"
+            >
+
+            <div class="card-content">
+
+                <h3>McMaster DomesDay Competition</h3>
+
+                <p class="card-meta">
+                    Structural design · 1st place
+                </p>
+
+                <p>
+                    Designed a 3D hollow dome structure for a
+                    structural engineering competition. The final
+                    structure withstood approximately 33,000 lbs before
+                    collapsing and placed first in the competition.
+                </p>
+
+                <div class="pill-row">
+                    <span class="pill">Structural design</span>
+                    <span class="pill">Engineering</span>
+                    <span class="pill">Prototyping</span>
+                    <span class="pill">Problem solving</span>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECT GALLERY
+========================= -->
+
+<section>
+
+    <h2 class="section-title">
+        Project gallery
+    </h2>
+
+    <p class="section-subtitle">
+        Selected images from biomedical design and engineering
+        projects.
+    </p>
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+
+            <img
+                src="key_turner.jpg"
+                alt="Key-turning assistive device"
+            >
+
+            <div class="gallery-caption">
+                <h3>Key Turner</h3>
+                <p>
+                    Assistive device developed through the UW
+                    Biomechatronics Design Team.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="braille_keys.jpg"
+                alt="Braille keyboard"
+            >
+
+            <div class="gallery-caption">
+                <h3>Braille Keyboard</h3>
+                <p>
+                    Assistive technology project for people with
+                    visual impairments.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="crokinole_launcher.jpg"
+                alt="Crokinole launcher"
+            >
+
+            <div class="gallery-caption">
+                <h3>Crokinole Launcher</h3>
+                <p>
+                    Biomedical design project focused on reducing
+                    arthritis-related pain.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="dome_close.jpeg"
+                alt="Close view of DomesDay dome structure"
+            >
+
+            <div class="gallery-caption">
+                <h3>DomesDay Structure</h3>
+                <p>
+                    Close view of the structural prototype that
+                    withstood approximately 33,000 lbs.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="dome_full.jpeg"
+                alt="Full DomesDay dome structure"
+            >
+
+            <div class="gallery-caption">
+                <h3>DomesDay — Full Structure</h3>
+                <p>
+                    3D hollow dome structure developed for the
+                    McMaster DomesDay Competition.
+                </p>
+            </div>
+
+        </div>
 
     </div>
 
@@ -804,7 +1107,8 @@
 
     <p class="section-subtitle">
         Early hands-on experience developing careful experimental
-        technique, data analysis, and scientific documentation.
+        technique, scientific documentation, and quantitative
+        analysis.
     </p>
 
     <div class="about-grid">
@@ -925,10 +1229,10 @@
             <p>
                 Organized medical datasets gathered from Public Health
                 Ontario and mapped stroke data and social determinants
-                of health across Ontario using ArcGIS. The role
-                developed experience with medical data management,
-                geographic analysis, and maintaining accurate
-                information for decision-making.
+                of health across Ontario using ArcGIS. This developed
+                experience with medical data management, geographic
+                analysis, and maintaining accurate information for
+                decision-making.
             </p>
 
         </div>
@@ -998,33 +1302,38 @@
 
     <p class="section-subtitle">
         Biomedical engineering education with a growing foundation in
-        engineering, computation, science, and design.
+        engineering, computation, science, design, and human factors.
     </p>
 
     <div class="card">
 
-        <h3>
-            Bachelor of Applied Science — Biomedical Engineering
-        </h3>
+        <div class="card-content">
 
-        <p class="card-meta">
-            University of Waterloo · September 2025 – Present
-        </p>
+            <h3>
+                Bachelor of Applied Science — Biomedical Engineering
+            </h3>
 
-        <p>
-            2A Biomedical Engineering student developing a foundation
-            across biomedical design, computation, mathematics,
-            mechanics, biology, chemistry, human factors, and
-            engineering communication.
-        </p>
+            <p class="card-meta">
+                University of Waterloo · September 2025 – Present
+            </p>
 
-        <div class="pill-row">
-            <span class="pill">Biomedical Engineering</span>
-            <span class="pill">Biomedical Design</span>
-            <span class="pill">Mechanics</span>
-            <span class="pill">Biology</span>
-            <span class="pill">Chemistry</span>
-            <span class="pill">Computation</span>
+            <p>
+                2A Biomedical Engineering student developing a
+                foundation across biomedical design, computation,
+                mathematics, mechanics, biology, chemistry, human
+                factors, and engineering communication.
+            </p>
+
+            <div class="pill-row">
+                <span class="pill">Biomedical Engineering</span>
+                <span class="pill">Biomedical Design</span>
+                <span class="pill">Mechanics</span>
+                <span class="pill">Biology</span>
+                <span class="pill">Chemistry</span>
+                <span class="pill">Computation</span>
+                <span class="pill">Human Factors</span>
+            </div>
+
         </div>
 
     </div>
@@ -1051,26 +1360,31 @@
 
         <article class="card">
 
-            <h3>Programming & scientific computing</h3>
+            <div class="card-content">
 
-            <p class="card-meta">
-                Python · C++ · Data analysis
-            </p>
+                <h3>Programming & scientific computing</h3>
 
-            <p>
-                Proficient in C++ and Python, with growing experience
-                applying Python to scientific computing and data
-                analysis. Currently developing skills with Jupyter,
-                NumPy, Pandas, Git/GitHub, and XCOM through RadML.
-            </p>
+                <p class="card-meta">
+                    Python · C++ · Data analysis
+                </p>
 
-            <div class="pill-row">
-                <span class="pill">Python</span>
-                <span class="pill">C++</span>
-                <span class="pill">NumPy</span>
-                <span class="pill">Pandas</span>
-                <span class="pill">Jupyter</span>
-                <span class="pill">Git/GitHub</span>
+                <p>
+                    Proficient in C++ and Python, with growing
+                    experience applying Python to scientific computing
+                    and data analysis. Currently developing skills with
+                    Jupyter, NumPy, Pandas, Git/GitHub, and XCOM through
+                    RadML.
+                </p>
+
+                <div class="pill-row">
+                    <span class="pill">Python</span>
+                    <span class="pill">C++</span>
+                    <span class="pill">NumPy</span>
+                    <span class="pill">Pandas</span>
+                    <span class="pill">Jupyter</span>
+                    <span class="pill">Git/GitHub</span>
+                </div>
+
             </div>
 
         </article>
@@ -1078,25 +1392,29 @@
 
         <article class="card">
 
-            <h3>Engineering & design</h3>
+            <div class="card-content">
 
-            <p class="card-meta">
-                SolidWorks · 3D printing · Prototyping
-            </p>
+                <h3>Engineering & design</h3>
 
-            <p>
-                Proficient in SolidWorks with hands-on experience
-                designing and fabricating 3D-printed devices through
-                biomedical design projects and the UW
-                Biomechatronics Design Team.
-            </p>
+                <p class="card-meta">
+                    SolidWorks · 3D printing · Prototyping
+                </p>
 
-            <div class="pill-row">
-                <span class="pill">SolidWorks</span>
-                <span class="pill">3D printing</span>
-                <span class="pill">CAD</span>
-                <span class="pill">Prototyping</span>
-                <span class="pill">Iterative design</span>
+                <p>
+                    Proficient in SolidWorks with hands-on experience
+                    designing and fabricating 3D-printed devices
+                    through biomedical design projects and the UW
+                    Biomechatronics Design Team.
+                </p>
+
+                <div class="pill-row">
+                    <span class="pill">SolidWorks</span>
+                    <span class="pill">3D printing</span>
+                    <span class="pill">CAD</span>
+                    <span class="pill">Prototyping</span>
+                    <span class="pill">Iterative design</span>
+                </div>
+
             </div>
 
         </article>
@@ -1104,25 +1422,30 @@
 
         <article class="card">
 
-            <h3>Laboratory & analysis</h3>
+            <div class="card-content">
 
-            <p class="card-meta">
-                Experimental methods · Data analysis
-            </p>
+                <h3>Laboratory & analysis</h3>
 
-            <p>
-                Developing practical laboratory and quantitative
-                analysis skills through biomedical engineering
-                coursework, including pipetting, hydrogel fabrication,
-                contact angle measurements, regression, calibration
-                curves, and basic statistical analysis.
-            </p>
+                <p class="card-meta">
+                    Experimental methods · Data analysis
+                </p>
 
-            <div class="pill-row">
-                <span class="pill">Wet lab</span>
-                <span class="pill">Statistics</span>
-                <span class="pill">Regression</span>
-                <span class="pill">Excel</span>
+                <p>
+                    Developing practical laboratory and quantitative
+                    analysis skills through biomedical engineering
+                    coursework, including pipetting, hydrogel
+                    fabrication, contact angle measurements,
+                    regression, calibration curves, and basic
+                    statistical analysis.
+                </p>
+
+                <div class="pill-row">
+                    <span class="pill">Wet lab</span>
+                    <span class="pill">Statistics</span>
+                    <span class="pill">Regression</span>
+                    <span class="pill">Excel</span>
+                </div>
+
             </div>
 
         </article>
@@ -1130,26 +1453,93 @@
 
         <article class="card">
 
-            <h3>Communication & productivity</h3>
+            <div class="card-content">
 
-            <p class="card-meta">
-                Technical writing · Presentation · Microsoft Office
-            </p>
+                <h3>Communication & productivity</h3>
+
+                <p class="card-meta">
+                    Technical writing · Presentation · Microsoft Office
+                </p>
+
+                <p>
+                    Experienced with written, visual, and oral
+                    communication through lab reports, presentations,
+                    and coursework. Proficient with Microsoft Office
+                    and Canva, with additional experience communicating
+                    technical ideas through tutoring and team projects.
+                </p>
+
+                <div class="pill-row">
+                    <span class="pill">Microsoft Office</span>
+                    <span class="pill">Canva</span>
+                    <span class="pill">Technical writing</span>
+                    <span class="pill">Presentations</span>
+                    <span class="pill">French — DELF A1</span>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SPACE MEDICINE INTEREST
+========================= -->
+
+<section>
+
+    <h2 class="section-title">
+        Areas of interest
+    </h2>
+
+    <p class="section-subtitle">
+        The engineering problems I’m especially interested in
+        exploring as I continue through biomedical engineering.
+    </p>
+
+    <div class="about-grid">
+
+        <article class="about-panel">
+
+            <h3>Space medicine</h3>
 
             <p>
-                Experienced with written, visual, and oral
-                communication through lab reports, presentations, and
-                coursework. Proficient with Microsoft Office and
-                Canva, with additional experience communicating
-                technical ideas through tutoring and team projects.
+                I am particularly interested in the biomedical
+                challenges associated with human spaceflight and the
+                engineering systems that can help people remain
+                healthy and capable in space.
             </p>
 
             <div class="pill-row">
-                <span class="pill">Microsoft Office</span>
-                <span class="pill">Canva</span>
-                <span class="pill">Technical writing</span>
-                <span class="pill">Presentations</span>
-                <span class="pill">French — DELF A1</span>
+                <span class="pill">Space medicine</span>
+                <span class="pill">Human health</span>
+                <span class="pill">Biomedical engineering</span>
+            </div>
+
+        </article>
+
+
+        <article class="about-panel">
+
+            <h3>Extreme environments</h3>
+
+            <p>
+                I am interested in the intersection between
+                biomedical engineering and extreme-environment
+                engineering, particularly problems involving
+                radiation, environmental stressors, human performance,
+                and technologies that enable people to operate in
+                demanding environments.
+            </p>
+
+            <div class="pill-row">
+                <span class="pill">Extreme environments</span>
+                <span class="pill">Radiation</span>
+                <span class="pill">Engineering systems</span>
             </div>
 
         </article>
@@ -1225,7 +1615,8 @@
             I’m interested in opportunities where I can contribute
             through organized, detail-oriented, and collaborative
             engineering work while continuing to develop practical
-            technical skills.
+            technical skills in biomedical and extreme-environment
+            applications.
         </p>
 
         <div class="contact-grid">
@@ -1255,21 +1646,29 @@
                         </a>
                     </li>
 
-                    <li>
-                        <strong>LinkedIn:</strong>
-                        <a href="#">
-                            Add LinkedIn profile
-                        </a>
-                    </li>
-
-                    <li>
-                        <strong>GitHub:</strong>
-                        <a href="#">
-                            Add GitHub profile
-                        </a>
-                    </li>
-
                 </ul>
+
+                <div class="social-links">
+
+                    <a
+                        class="social-link"
+                        href="https://www.linkedin.com/in/will-stewart-803094387/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        LinkedIn
+                    </a>
+
+                    <a
+                        class="social-link"
+                        href="https://github.com/willgelstew"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub
+                    </a>
+
+                </div>
 
             </div>
 
@@ -1279,6 +1678,13 @@
                     I enjoy learning new tools, improving existing
                     processes, and working on problems where careful
                     engineering can improve outcomes for people.
+                </p>
+
+                <p class="section-subtitle">
+                    I am particularly interested in opportunities
+                    involving biomedical engineering, space medicine,
+                    extreme environments, scientific computing, and
+                    human-centred engineering.
                 </p>
 
             </div>
